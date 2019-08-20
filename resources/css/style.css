@@ -2,15 +2,158 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.5;
 }
 
 html,
 body {
-    background-color: #fff;
-    color: #555;
+    background-color: #DEF2F1;
+    color: #455;
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.center {
+ margin: 0 auto;
+}
+
+.content-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  overflow: auto; 
+  justify-content: center;
+}
+
+
+
+.main-side {
+  width: 60%;
+  max-width: 1000px;
+  min-width: 600px;
+  height: 100%;
+}
+
+.artist-container {
+  background-color: #FFDDE2FF;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
+
+.artist-info-content {
+  padding: 0px 40px;
+  margin-bottom: 30px;
+  align-self: center;
+}
+
+.options-side {
+  width: 40%;
+  min-width: 300px;
+  display: flex;
+  justify-self: center;
+  flex-direction: column;
+}
+
+.options-menu {
+  color: #fff;
+  background-color: #FAA094FF;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px 15px 15px;
+}
+
+.options-sliders {
+  background-color: #F1F3FFFF;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px 15px 15px;
+  border-radius: 30px;
+  height: 100%; 
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+ place-content: center;
+}
+
+.slider > input {
+  width: 90%;
+  height: 30px;
+  background: #e7e7e7;
+  outline: none;
+  opacity: 0.5;
+  transition: opacity .3s;
+}
+
+.art-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #9ED9CCFF;
+  border-radius: 30px;
+}
+
+.art-piece {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#kaotisk-hverdag {
+  margin: 30px;
+  height: 200px;
+  background-color: white;
+  border-radius: 30px;
+}
+
+#urolig-solnedgang {
+  margin: 30px;
+  height: 200px;
+  background-color: blue;
+  border-radius: 30px; 
+}
+
+.art-info-text {
+  padding: 0px 40px;
+  margin-bottom: 30px;
+  align-self: center;
+}
+
+.nav-links {
+  align-self: center;
+}
+
+.nav-links li {
+  list-style-type: none;
+  text-decoration: underline;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+
+.nav-links li:hover {
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .content-container {
+    width: 100%;
+  }
+  
+  .main-side {
+    width: 100%;
+  }
+
+  .options-side {
+    width: 100%;
+  }
 }

@@ -2,31 +2,83 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
   <link rel='stylesheet' type='text/css' href='resources/css/style.css'>
-
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-
   <script src='resources/js/script.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <title>Lionardo DiCanvasio</title>
-
+  <title>Leo DiCanvasio</title>
 </head>
 
 <body>
-  <header>
-    <div class='hero-artist-info'>
-      <h1>Lionardo DiCanvasio</h1>
-      <p>Mitt navn er Lionardo DiCanvasio og jeg er en kunstner som allerede fra tidlig alder etablerte meg i
-        kunstnermiljøet i Norge. </p>
+  <div class='content-container'>
+    <div class='main-side'>
+      <header class='artist-container'>
+        <h1 class='center'>
+          Leonardo DiCanvasio
+        </h1>
+        <p class=' artist-info-content'>Leonardo DiCanvasio har en spesiell interesse innenfor asymmetrisk og
+          dynamisk kunst.
+          I senere år har han etablerte seg som et av Norges
+          største
+          kunstnertalenter. Dette er en hyllest til hans mest kjente kunstverk, og er inspirert av hans interesse for
+          det asymmetriske. Prøv slideren for å variere på et av kunstverkene!
+        </p>
+      </header>
+      <div class='art-container'>
+
+        <div class='art-piece'>
+          <canvas id='urolig-solnedgang'></canvas>
+          <h3 class='center'>Urolig solnedgang</h3>
+          <p class='art-info-text'>
+            Solnedgangen har alltid hatt en forlokkende effekt for DiCanvasio. Han ønsket å videreføre denne følelsen.
+          </p>
+        </div>
+        <div class='art-piece'>
+          <canvas id='kaotisk-hverdag'></canvas>
+          <h3 class='center'>Kaotisk hverdag</h3>
+          <p class='art-info-text'>
+            Etter en spesielt travel dag med kollektivtransport ble DiCanvasio inspirert til skape dette mesterverket.
+          </p>
+        </div>
+      </div>
     </div>
-  </header>
+    <div class='options-side'>
+      <div class='options-menu'>
+        <h2 class='center'>Meny</h2>
+        <ul class='nav-links'>
+          <li>Om Leonardo DiCanvasio</li>
+          <li>Historien bak</li>
+          <li>Kunstverkene bak suksessen</li>
+          <li>Oppkommende kunstutstillinger</li>
+        </ul>
+      </div>
+      <div class='options-sliders'>
+        <h3 class='center'>Sliders</h3>
+        <p class='art-info-text'>
+          Benytt deg av disse sliderne for å endre på kunstverket <b>'Kaotisk hverdag'.</b>
+        </p>
+        <div class='slider-container'>
+          <div class='slider'>
+            <p class='center'>Endre antall figurer</p>
+            <input class="slider" type="range" min="5" max="10" value="5" id="amount" />
+          </div>
+          <div class='slider'>
+            <p class='center'>Endre farge på bakgrunnen</p>
+            <input class="slider" type="color" id="color" />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
+
+<!--Kilder: 
+https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+-->
+
+
 
 </html>
