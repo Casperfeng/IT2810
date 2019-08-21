@@ -7,12 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' type='text/css' href='resources/css/style.css'>
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
-  <script src='resources/js/script.js'></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src='resources/js/script.js'></script>
+
   <title>Leo DiCanvasio</title>
 </head>
 
 <body>
+  <nav>
+    <h1 class='midtext'>DiCanvasio Exhibition</h1>
+  </nav>
   <div class='content-container'>
     <div class='main-side'>
       <header class='artist-container'>
@@ -24,16 +28,18 @@
           I senere år har han etablerte seg som et av Norges
           største
           kunstnertalenter. Dette er en hyllest til hans mest kjente kunstverk, og er inspirert av hans interesse for
-          det asymmetriske. Prøv slideren for å variere på et av kunstverkene!
+          det abstrakte. Prøv slideren for å variere på et av kunstverkene!
         </p>
       </header>
       <div class='art-container'>
-
         <div class='art-piece'>
-          <canvas id='urolig-solnedgang'></canvas>
+          <svg id='urolig-solnedgang' class='sun' width="100" height="100">
+            <circle class='sun' cx="50" cy="50" r="40" stroke="red" stroke-width="4" fill="yellow" />
+          </svg>
+
           <h3 class='center'>Urolig solnedgang</h3>
           <p class='art-info-text'>
-            Solnedgangen har alltid hatt en forlokkende effekt for DiCanvasio. Han ønsket å videreføre denne følelsen.
+            Solnedgangen har alltid hatt en effekt på DiCanvasio. Han ønsket å fremstille solens ustabilitet.
           </p>
         </div>
         <div class='art-piece'>
@@ -47,7 +53,7 @@
     </div>
     <div class='options-side'>
       <div class='options-menu'>
-        <h2 class='center'>Meny</h2>
+        <h2>Meny</h2>
         <ul class='nav-links'>
           <li>Om Leonardo DiCanvasio</li>
           <li>Historien bak</li>
@@ -56,27 +62,32 @@
         </ul>
       </div>
       <div class='options-sliders'>
-        <h3 class='center'>Sliders</h3>
-        <p class='art-info-text'>
+        <h2>Modifikatorer</h2>
+        <p>
           Benytt deg av disse sliderne for å endre på kunstverket <b>'Kaotisk hverdag'.</b>
         </p>
         <div class='slider-container'>
-          <div class='slider'>
-            <p class='center'>Endre antall figurer</p>
-            <input class="slider" type="range" min="5" max="10" value="5" id="amount" />
+          <div class='slider' id='amount-slider-div'>
+            <p>Endre kaosfaktor</p>
+            <input class="slider" type="range" min="0" max="100" value="0" id="amount" />
           </div>
           <div class='slider'>
-            <p class='center'>Endre farge på bakgrunnen</p>
+            <p>Endre farge på bakgrunnen</p>
             <input class="slider" type="color" id="color" />
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div></div>
+  <div class='documentation' id='docs'>
+    <h3 class='midtext'>Trykk for dokumentasjon</h1>
+  </div>
 </body>
 
 <!--Kilder: 
 https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+https://www.youtube.com/watch?v=EO6OkltgudE
 -->
 
 
