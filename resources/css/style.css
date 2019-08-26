@@ -51,6 +51,7 @@ nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .doc-item {
@@ -58,8 +59,12 @@ nav {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  max-width: 50%;
+  width: 50%;
+  min-width: 500px;
+}
 
+.doc-src {
+  margin-left: 20px;
 }
 
 .center {
@@ -110,7 +115,6 @@ nav {
 
 #urolig-solnedgang {
   border: 1px solid black;
-  margin: 30px;
   height: 400px;
   width: 400px;
   background-color: #1740f7;
@@ -151,44 +155,4 @@ nav {
   padding: 0px 40px;
   margin-bottom: 30px;
   align-self: start;
-}
-
-.nav-links {
-  align-self: end;
-}
-
-.nav-links li {
-  margin-top: 15px;
-  list-style-type: none;
-  text-decoration: underline;
-  cursor: pointer;
-  text-overflow: ellipsis;
-}
-
-.nav-links li:hover {
-  text-decoration: none;
-}
-
-@media only screen and (max-width: 1000px) {
-  .content-container {
-    width: 100%;
-  }
-  
-  .main-side {
-    width: 100%;
-  }
-
-  .options-side {
-    width: 100%;
-    flex-direction: column-reverse;
-    justify-items: center;
-  }
-
-  .options-menu {
-    height: fit-content;
-  }
-  
-  .options-sliders {
-    height: fit-content;
-  }
 }

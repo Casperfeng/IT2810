@@ -66,17 +66,17 @@
             CSS Grid er et to dimensjonelt system og kan dele inn i både rader og kolonner, mens Flexbox egner seg best
             for
             inndeling i en dimensjon enten rad eller kolonne.</p>
+          <br />
           <p>I mitt prosjekt har jeg valgt å benytte meg av Flexbox fordi det passet det tenkte designet for nettsiden
             som
-            jeg ønsket å gjøre så simpelt som mulig.
-            Ved variasjon i vindu-størrelse vil de forskjellige
-            seksjonene
-            skalere.</p>
+            jeg ønsket å gjøre så simpelt som mulig. Jeg har benyttet meg av flex-containers for å midtstille innholdet,
+            og for å skalere med skjermstørrelse.</p>
         </div>
         <div class='doc-item'>
           <h4>HTML5 Canvas / SVG:</h4>
           <p>Canvas er et HTML element (container) som benyttes for å tegne grafikk på nettsider. For å tegne
             benyttes Javascript gjennom et eget Canvas API.</p>
+          <br />
           <p>
             SVG er også et HTML element (container) som benyttes for å fremstille grafikk, men grafikken blir ikke
             tegnet
@@ -84,31 +84,68 @@
             uten å miste kvalitet. SVG elementer legger seg også i DOM, og man kan benytte seg av ulike event handlers
             for
             å manipulere grafikken, eller benytte kun ren css.</p>
+          <br />
+          <p>Her har jeg benyttet meg av SVG og Canvas på to ulike kunstverk med mål om å ha samme funksjonalitet for
+            begge. Dette gjorde jeg for å bli bedre kjent med begge alternativene</p>
         </div>
         <div class='doc-item'>
           <h4>jQuery:</h4>
           <p>
-            I dette prosjektet har jeg brukt JQuery til å lage figurene på canvas versjonen av kunstverket.</p>
+            JQuery er et lite og raskt Javascript-biblotek som inneholder funksjonalitet for DOM-manipulasjon og
+            event-handling. JQuery var veldig populært før i tiden når browser-compatibility kunne by på problemer.
+          </p>
+          <br />
+          <p>
+            I dette prosjektet har jeg brukt JQuery for å selektere DOM-elementer. Dette er gjort for å manipulere
+            elementene og legge til listeners ved hover, click og mouse-out eventer. JQuery brukes til å bygge alle
+            elementene i Canvas kunstverket, animere bevegelsene, endre farger og å åpne og lukke dokumentasjon.
+          </p>
         </div>
         <div class='doc-item'>
           <h4>Cross-browser testing:</h4>
-          Gi en kort beskrivelse av hvordan du har utført cross-browser testing.
+          <p>
+            Cross-browser testing benyttes for å teste applikasjoner på tvers av ulike nettlesere.
+          </p>
+          <br />
+          <p>
+            For å teste nettsiden min testet jeg først all funksjonalitet og skalerbarhet i Chrome. Deretter testet jeg
+            i Safari, og sørget for at nettsiden hadde ønsket utseende og oppførsel i begge disse.
+          </p>
+
         </div>
         <div class='doc-item'>
           <h4>Kilder:</h4>
-          https://medium.com/youstart-labs/beginners-guide-to-choose-between-css-grid-and-flexbox-783005dd2412
-          <br />https://gridbyexample.com/examples/
+          <ul class='doc-src'>
+            <li>
+              <a
+                href='https://medium.com/youstart-labs/beginners-guide-to-choose-between-css-grid-and-flexbox-783005dd2412'>
+                Flexbox & CSS Grid</a>
+            </li>
+            <li>
+              <a href='https://css-tricks.com/snippets/css/a-guide-to-flexbox/'>
+                Flexbox
+              </a>
+            </li>
+            <li>
+              <a href='https://jquery.com/'>
+                JQuery
+              </a>
+            </li>
+            <li>
+              <a href='https://www.w3schools.com/html/html5_canvas.asp'>
+                HTML5 Canvas
+              </a>
+            </li>
+            <li>
+              <a href='https://www.w3schools.com/graphics/svg_intro.asp'>
+                SVG
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
 </body>
-
-<!--Kilder: 
-https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
-https://www.youtube.com/watch?v=EO6OkltgudE
--->
-
-
 
 </html>

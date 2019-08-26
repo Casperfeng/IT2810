@@ -50,7 +50,7 @@ $(document).ready(function () {
   }
 
   function updateCanvas() {
-    setUpCanvas();
+    setBackground();
     drawSun();
     drawTrees();
     drawGrass();
@@ -67,7 +67,7 @@ $(document).ready(function () {
     if (animation) {
       context.fillStyle = '#660000';
       context.arc(200, currentYpos, 40, 0, 2 * Math.PI);
-      currentYpos += 0.5;
+      currentYpos += 1;
     }
     else {
       context.fillStyle = 'yellow';
@@ -119,6 +119,3 @@ $(document).ready(function () {
     window.scrollTo(0, document.body.scrollHeight);
   });
 });
-
-
-
