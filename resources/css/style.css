@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    line-height: 3.0;
+    line-height: 1.5;
 }
 
 html,
@@ -10,14 +10,13 @@ body {
   background-color: #E9EBEE;
   color: black;
   font-family: 'Lato', 'Arial', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 300;
+  font-size: 18px;
   text-rendering: optimizeLegibility;
 }
 
 header {
   display: flex;
-  flex-direction: column;
   justify-self: center;
 }
 
@@ -26,14 +25,41 @@ nav {
   color: white;
 }
 
-.midtext {
+.navtext {
   text-align: center;
-  margin: 0 auto;
+}
+
+.documentation-btn {
+  cursor: pointer;
+  text-align: center;
+}
+
+.documentation-link {
+  background-color:#4367B2;
+  color: white;
 }
 
 .documentation {
-  background-color:#4367B2;
-  color: white;
+  display: none;
+  color: black;
+  padding: 0 12px;
+  background-color: white;
+  border: 1px solid #d7d7d7;
+}
+
+.documentation-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.doc-item {
+  border: 0.5px solid #d7d7d7;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  max-width: 50%;
+
 }
 
 .center {
@@ -51,8 +77,8 @@ nav {
 }
 
 .main-side {
-  width: 60%;
-  min-width: 600px;
+  width: 50%;
+  min-width: 500px;
   height: 100%;
 }
 
@@ -69,43 +95,6 @@ nav {
   align-self: center;
 }
 
-.options-side {
-  width: 30%;
-  min-width: 200px;
-  max-width: 400px;
-  display: flex;
-  justify-self: end;
-  flex-direction: column;
-  padding: 5px;
-}
-
-.options-menu { 
-  min-height: 550px; 
-  display: flex;
-  flex-direction: column;
-}
-
-.options-sliders {
-  min-height: 700px;
-  display: flex;
-  flex-direction: column;
-  align-self: start;
-  height: 100%; 
-}
-
-.slider-container {
-  display: flex;
-  flex-direction: column;
- place-content: start;
-}
-
-.slider > input {
-  width: 90%;
-  height: 90px;
-  background: white;
-  outline: none;
-}
-
 .art-container {
   background-color: white;
   display: flex;
@@ -119,21 +108,11 @@ nav {
   justify-content: center;  
 }
 
-#kaotisk-hverdag {
-  border: 1px solid black;
-  margin: 30px;
-  height: 600px;
-  width: 600px;
-  background-color: white;
-  align-self: center;
-  border-radius: 30px;
-}
-
 #urolig-solnedgang {
   border: 1px solid black;
   margin: 30px;
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   background-color: #1740f7;
   align-self: center;
   border-radius: 30px; 
@@ -144,11 +123,29 @@ nav {
 }
 
 #urolig-solnedgang:hover .sun {
-  fill: #660000;
+  fill: #660000;  
+  cy: 350px;
+  transition: cy 9s;
  }
 
+ #urolig-solnedgang:hover .grass {
+   fill: grey;
+ }
 
+#urolig-solnedgang:hover .tree-trunk {
+  fill: grey;
+}
 
+#urolig-solnedgang:hover .tree-top {
+  fill: grey;  
+}
+
+#urolig-solnedgang-canvas {
+ border: 1px solid black;
+  background-color: #1740f7;
+  align-self: center;
+  border-radius: 30px; 
+}
 
 .art-info-text {
   padding: 0px 40px;
@@ -161,6 +158,7 @@ nav {
 }
 
 .nav-links li {
+  margin-top: 15px;
   list-style-type: none;
   text-decoration: underline;
   cursor: pointer;
@@ -187,10 +185,10 @@ nav {
   }
 
   .options-menu {
-    height: auto;
+    height: fit-content;
   }
   
   .options-sliders {
-    height: auto;
+    height: fit-content;
   }
 }

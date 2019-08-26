@@ -1,70 +1,124 @@
 $(document).ready(function () {
-
-  const canvas = $('#kaotisk-hverdag');
-  const slider = $('#amount');
-  const colorpicker = $('#color');
-
-  const width = 600;
-  const height = 600;
-
+  const documentation = $('#documentation');
+  const canvas = $('#urolig-solnedgang-canvas');
+  const width = 400;
+  const height = 400;
   const context = canvas[0].getContext('2d');
+  let animation = null;
 
-  $('#color').change(function () {
-    canvas[0].style.backgroundColor = colorpicker.val();
+  setUpCanvas();
+
+  canvas.mouseenter(function () {
+    currentYpos = 50;
   });
 
-
-  $('#amount-slider-div').change(function () {
-    context.clearRect(0, 0, width, height);
-    for (i = 0; i < slider.val(); i++) {
-      const figType = generateRandomNumber(3);
-      switch (figType) {
-        case 1:
-          drawRandomColoredCircle();
-          break;
-        case 2:
-          drawRandomColoredRect();
-          break;
-        case 3:
-          drawRandomTriangle();
-          break;
-      }
+  canvas.hover(function () {
+    //avoid stacking animation
+    if (animation) {
+      cancelAnimationFrame(animation);
     }
-  })
+    animate();
+  });
 
-  function drawRandomColoredCircle() {
-    generateRandomFillStyle();
-    const radius = generateRandomNumber(30);
-    context.beginPath();
-    context.arc(generateRandomNumber(150), generateRandomNumber(150), radius, Math.PI * 2, false);
-    context.fill();
+  canvas.mouseout(function () {
+    unMount();
+  });
+
+  function animate() {
+    animation = requestAnimationFrame(animate);
+    clearCanvas();
+    updateCanvas();
+    if (currentYpos >= 350) {
+      setUpCanvas();
+      return;
+    }
   }
 
-  function drawRandomTriangle() {
-    generateRandomFillStyle();
-    const x = generateRandomNumber(100);
-    const y = generateRandomNumber(100);
-    const z = generateRandomNumber(40);
+  function unMount() {
+    cancelAnimationFrame(animation);
+    animation = null;
+    clearCanvas();
+    setUpCanvas();
+  }
+
+  function setUpCanvas() {
+    setBackground();
+    drawSun();
+    drawGrass();
+    drawTrees();
+
+  }
+
+  function updateCanvas() {
+    setUpCanvas();
+    drawSun();
+    drawTrees();
+    drawGrass();
+  }
+
+  function setBackground() {
+    animation ? canvas[0].style.backgroundColor = 'black' : canvas[0].style.backgroundColor = '#1740f7';
+  }
+
+  function drawSun() {
     context.beginPath();
-    context.moveTo(x, y);
-    context.lineTo(x * 2, y + z * 2);
-    context.lineTo(x + z, y + z);
+    context.lineWidth = 8;
+    context.strokeStyle = 'red';
+    if (animation) {
+      context.fillStyle = '#660000';
+      context.arc(200, currentYpos, 40, 0, 2 * Math.PI);
+      currentYpos += 0.5;
+    }
+    else {
+      context.fillStyle = 'yellow';
+      context.arc(200, 50, 40, 0, 2 * Math.PI);
+    }
+    context.stroke();
+    context.fill();
     context.closePath();
+  }
+
+  function drawGrass() {
+    animation ? context.fillStyle = 'grey' : context.fillStyle = 'rgb(0, 255, 0)';
+    context.fillRect(0, 300, 400, 1000);
+  }
+
+  function drawTrees() {
+    drawTreeTops();
+    drawTreeTrunks();
+  }
+
+  function drawTreeTops() {
+    context.beginPath();
+    animation ? context.fillStyle = 'grey' : context.fillStyle = 'green';
+    context.moveTo(0, 240);
+    context.lineTo(120, 240);
+    context.lineTo(55, 10);
+    context.moveTo(240, 220);
+    context.lineTo(400, 220);
+    context.lineTo(325, 25);
     context.fill();
+    context.closePath();
   }
 
-  function drawRandomColoredRect() {
-    generateRandomFillStyle();
-    context.fillRect(`${generateRandomNumber(200)}`, `${generateRandomNumber(200)}`, `${generateRandomNumber(200)}`, `${generateRandomNumber(200)}`);
+  function drawTreeTrunks() {
+    animation ? context.fillStyle = 'grey' : context.fillStyle = 'brown';
+    context.fillRect(300, 220, 50, 80);
+    context.fillRect(40, 240, 40, 60);
   }
 
-  function generateRandomNumber(max) {
-    return Math.floor(Math.random() * (max + 1));
+  function clearCanvas() {
+    context.beginPath();
+    context.clearRect(0, 0, width, height);
   }
 
-  function generateRandomFillStyle() {
-    context.fillStyle = `rgba(${generateRandomNumber(255)}, ${generateRandomNumber(255)}, ${generateRandomNumber(255)}`;
-  }
+  $('#doc-link').click(function () {
+    documentation.css('display') === 'none' ?
+      documentation.css('display', 'block') :
+      documentation.css('display', 'none');
+    window.scrollTo(0, document.body.scrollHeight);
+  });
 });
+
 
 

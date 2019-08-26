@@ -9,13 +9,12 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src='resources/js/script.js'></script>
-
   <title>Leo DiCanvasio</title>
 </head>
 
 <body>
   <nav>
-    <h1 class='midtext'>DiCanvasio Exhibition</h1>
+    <h1 class='navtext'>DiCanvasio Exhibition</h1>
   </nav>
   <div class='content-container'>
     <div class='main-side'>
@@ -28,60 +27,80 @@
           I senere år har han etablerte seg som et av Norges
           største
           kunstnertalenter. Dette er en hyllest til hans mest kjente kunstverk, og er inspirert av hans interesse for
-          det abstrakte. Prøv slideren for å variere på et av kunstverkene!
+          det abstrakte. <br />
+          Interaktivitet: Hover musen over kunstverkene.
         </p>
       </header>
       <div class='art-container'>
         <div class='art-piece'>
-          <svg id='urolig-solnedgang' class='sun' width="100" height="100">
-            <circle class='sun' cx="50" cy="50" r="40" stroke="red" stroke-width="4" fill="yellow" />
+          <svg id='urolig-solnedgang'>
+            <circle class='sun' cx='200' cy='50' r='40' stroke='red' stroke-width='4' fill='yellow' />
+            <polygon class='tree-top' height='30' width='30' fill='green' points='325,  25 400, 220 220, 220' />
+            <rect class=' tree-trunk' height="80" width='50' fill='brown' y='220' x='300' />
+            <polygon class='tree-top' height='30' width='30' fill='green' points='55,  10 0, 240 120, 240' />
+            <rect class=' tree-trunk' height="60" width='40' fill='brown' y='240' x='40' />
+            <rect class='grass' height="100" width='400' fill='rgb(0,255,0)' y='300' />
           </svg>
-
-          <h3 class='center'>Urolig solnedgang</h3>
+          <h3 class='center'>Urolig solnedgang (SVG)</h3>
           <p class='art-info-text'>
             Solnedgangen har alltid hatt en effekt på DiCanvasio. Han ønsket å fremstille solens ustabilitet.
           </p>
         </div>
         <div class='art-piece'>
-          <canvas id='kaotisk-hverdag'></canvas>
-          <h3 class='center'>Kaotisk hverdag</h3>
+          <canvas id='urolig-solnedgang-canvas' width=400 height=400></canvas>
+          <h3 class='center'>Urolig solnedgang (Canvas)</h3>
           <p class='art-info-text'>
-            Etter en spesielt travel dag med kollektivtransport ble DiCanvasio inspirert til skape dette mesterverket.
+            Solnedgangen har alltid hatt en effekt på DiCanvasio. Han ønsket å fremstille solens ustabilitet.
           </p>
         </div>
       </div>
     </div>
-    <div class='options-side'>
-      <div class='options-menu'>
-        <h2>Meny</h2>
-        <ul class='nav-links'>
-          <li>Om Leonardo DiCanvasio</li>
-          <li>Historien bak</li>
-          <li>Kunstverkene bak suksessen</li>
-          <li>Oppkommende kunstutstillinger</li>
-        </ul>
-      </div>
-      <div class='options-sliders'>
-        <h2>Modifikatorer</h2>
-        <p>
-          Benytt deg av disse sliderne for å endre på kunstverket <b>'Kaotisk hverdag'.</b>
-        </p>
-        <div class='slider-container'>
-          <div class='slider' id='amount-slider-div'>
-            <p>Endre kaosfaktor</p>
-            <input class="slider" type="range" min="0" max="100" value="0" id="amount" />
-          </div>
-          <div class='slider'>
-            <p>Endre farge på bakgrunnen</p>
-            <input class="slider" type="color" id="color" />
-          </div>
+  </div>
+  <div class='documentation-link' id='doc-link'>
+    <h3 class='documentation-btn'>Trykk for dokumentasjon</h3>
+    <div class="documentation" id='documentation'>
+      <div class='documentation-container'>
+        <div class='doc-item'>
+          <h4>CSS Grid / Flexbox:</h4>
+          <p>CSS Grid og Flexbox er verktøy man kan benytte seg av for å oppnå dynamiske layouts.
+            CSS Grid er et to dimensjonelt system og kan dele inn i både rader og kolonner, mens Flexbox egner seg best
+            for
+            inndeling i en dimensjon enten rad eller kolonne.</p>
+          <p>I mitt prosjekt har jeg valgt å benytte meg av Flexbox fordi det passet det tenkte designet for nettsiden
+            som
+            jeg ønsket å gjøre så simpelt som mulig.
+            Ved variasjon i vindu-størrelse vil de forskjellige
+            seksjonene
+            skalere.</p>
+        </div>
+        <div class='doc-item'>
+          <h4>HTML5 Canvas / SVG:</h4>
+          <p>Canvas er et HTML element (container) som benyttes for å tegne grafikk på nettsider. For å tegne
+            benyttes Javascript gjennom et eget Canvas API.</p>
+          <p>
+            SVG er også et HTML element (container) som benyttes for å fremstille grafikk, men grafikken blir ikke
+            tegnet
+            ved Javascript. Det blir her benyttet et xml-format. SVG grafikk er vektorbasert og kan skaleres opp og ned
+            uten å miste kvalitet. SVG elementer legger seg også i DOM, og man kan benytte seg av ulike event handlers
+            for
+            å manipulere grafikken, eller benytte kun ren css.</p>
+        </div>
+        <div class='doc-item'>
+          <h4>jQuery:</h4>
+          <p>
+            I dette prosjektet har jeg brukt JQuery til å lage figurene på canvas versjonen av kunstverket.</p>
+        </div>
+        <div class='doc-item'>
+          <h4>Cross-browser testing:</h4>
+          Gi en kort beskrivelse av hvordan du har utført cross-browser testing.
+        </div>
+        <div class='doc-item'>
+          <h4>Kilder:</h4>
+          https://medium.com/youstart-labs/beginners-guide-to-choose-between-css-grid-and-flexbox-783005dd2412
+          <br />https://gridbyexample.com/examples/
         </div>
       </div>
     </div>
-  </div>
-  <div></div>
-  <div class='documentation' id='docs'>
-    <h3 class='midtext'>Trykk for dokumentasjon</h1>
   </div>
 </body>
 
