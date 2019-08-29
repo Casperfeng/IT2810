@@ -86,7 +86,7 @@ $(document).ready(function () {
     context.moveTo(0, 240);
     context.lineTo(120, 240);
     context.lineTo(55, 10);
-    context.moveTo(240, 220);
+    context.moveTo(220, 220);
     context.lineTo(400, 220);
     context.lineTo(325, 25);
     context.fill();
