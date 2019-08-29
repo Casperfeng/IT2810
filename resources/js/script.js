@@ -6,7 +6,7 @@ $(document).ready(function () {
   const context = canvas[0].getContext('2d');
   let animation = null;
 
-  setUpCanvas();
+  drawCanvas();
 
   canvas.mouseenter(function () {
     currentYpos = 50;
@@ -27,9 +27,9 @@ $(document).ready(function () {
   function animate() {
     animation = requestAnimationFrame(animate);
     clearCanvas();
-    updateCanvas();
+    drawCanvas();
     if (currentYpos >= 350) {
-      setUpCanvas();
+      drawCanvas();
       return;
     }
   }
@@ -38,22 +38,14 @@ $(document).ready(function () {
     cancelAnimationFrame(animation);
     animation = null;
     clearCanvas();
-    setUpCanvas();
+    drawCanvas();
   }
 
-  function setUpCanvas() {
+  function drawCanvas() {
     setBackground();
     drawSun();
     drawGrass();
     drawTrees();
-
-  }
-
-  function updateCanvas() {
-    setBackground();
-    drawSun();
-    drawTrees();
-    drawGrass();
   }
 
   function setBackground() {
